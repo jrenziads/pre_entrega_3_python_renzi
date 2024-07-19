@@ -15,3 +15,7 @@ class OwnerForm(forms.ModelForm):
     class Meta:
         model = Owner
         fields = ['name', 'car']
+        
+class SearchForm(forms.Form):
+    query = forms.CharField(label='Search', max_length=100)
+
