@@ -1,6 +1,6 @@
- {% extends 'web_autos/base.html' %}
+{% extends 'web_autos/base.html' %}
 
-{% block title %}Add Marca - AutosDelSur{% endblock %}
+{% block title %}Agregar Marca - AutosDelSur{% endblock %}
 
 {% block content %}
 <h1>Agregar Marca</h1>
@@ -8,6 +8,8 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Guardar</button>
+    <br>
+    <br>
 </form>
 {% endblock %}
 

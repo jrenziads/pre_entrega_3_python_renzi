@@ -5,17 +5,30 @@ class BrandForm(forms.ModelForm):
     class Meta:
         model = Brand
         fields = ['name', 'country']
+        labels = {
+            'name': 'Nombre',
+            'country': 'País',
+        }
 
 class CarForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = ['brand', 'model', 'year', 'price']
+        labels = {
+            'brand': 'Marca',
+            'model': 'Modelo',
+            'year': 'Año',
+            'price': 'Precio',
+        }
 
 class OwnerForm(forms.ModelForm):
     class Meta:
         model = Owner
         fields = ['name', 'car']
-        
-class SearchForm(forms.Form):
-    query = forms.CharField(label='Search', max_length=100)
+        labels = {
+            'name': 'Nombre',
+            'car': 'Coche',
+        }
 
+class SearchForm(forms.Form):
+    query = forms.CharField(label='Buscar', max_length=100)
