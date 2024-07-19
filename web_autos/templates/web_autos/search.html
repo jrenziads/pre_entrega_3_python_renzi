@@ -1,15 +1,15 @@
 {% extends 'web_autos/base.html' %}
 
-{% block title %}Search - CarVilla{% endblock %}
+{% block title %}Busqueda - AutosDelSur{% endblock %}
 
 {% block content %}
-<h1>Search</h1>
+<h1>Busqueda</h1>
 <form method="get">
     {{ form.as_p }}
-    <button type="submit">Search</button>
+    <button type="submit">Buscar</button>
 </form>
 {% if results %}
-    <h2>Results</h2>
+    <h2>Resultado</h2>
     <ul>
         {% for car in results %}
             <li>{{ car.model }} - {{ car.brand.name }}</li>

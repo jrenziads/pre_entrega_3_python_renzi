@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import BrandForm, CarForm, OwnerForm
+from .forms import BrandForm, CarForm, OwnerForm, SearchForm
+from .models import Brand, Car, Owner
 
 def index(request):
     return render(request, 'web_autos/index.html')
@@ -40,7 +41,7 @@ def search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            results = Car.objects.filter(model__icontains=query)  # Ejemplo de búsqueda
+            results = Car.objects.filter(model__icontains=query) 
             return render(request, 'web_autos/search.html', {'form': form, 'results': results})
     else:
         form = SearchForm()
