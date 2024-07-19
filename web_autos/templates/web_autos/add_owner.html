@@ -1,9 +1,9 @@
 {% extends 'web_autos/base.html' %}
 
-{% block title %}Add Dueño - AutosDelSur{% endblock %}
+{% block title %}Vender - AutosDelSur{% endblock %}
 
 {% block content %}
-<h1>Agregar Dueño</h1>
+<h1>Vender</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

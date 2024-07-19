@@ -3,7 +3,8 @@ from .forms import BrandForm, CarForm, OwnerForm, SearchForm
 from .models import Brand, Car, Owner
 
 def index(request):
-    return render(request, 'web_autos/index.html')
+    cars = Car.objects.all()
+    return render(request, 'web_autos/index.html', {'cars': cars})
 
 def add_brand(request):
     if request.method == 'POST':

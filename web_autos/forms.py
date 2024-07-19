@@ -27,8 +27,14 @@ class OwnerForm(forms.ModelForm):
         fields = ['name', 'car']
         labels = {
             'name': 'Nombre',
-            'car': 'Coche',
+            'car': 'Vehiculo',
         }
 
 class SearchForm(forms.Form):
-    query = forms.CharField(label='Buscar', max_length=100)
+    query = forms.CharField(
+        label='Buscar',
+        max_length=100,
+        error_messages={
+            'required': 'Este campo es obligatorio',
+        }
+    )
